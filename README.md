@@ -6,4 +6,3 @@ cd rascaloid-ui
 yarn install
 yarn start
 ```
-"# workspace-Sakamoto" 

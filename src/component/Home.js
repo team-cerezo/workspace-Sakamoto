@@ -1,14 +1,38 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { add } from '../actions'
+import { Initializer } from '../Initializer'
 
-export default () => (
+
+export default ({ projects }) => {
+
+    if (projects === '') {
+        projects = [];
+    }
+    return(
     <div>
         <h1>Home</h1>
-        <ul>
-            <li>TODO プロジェクトのデータを保持するStoreを作る</li>
-            <li>TODO プロジェクトの一覧を表示する</li>
-            <li>TODO プロジェクト詳細へリンクする</li>
-        </ul>
-        <p><Link to="/projects/123">XXX project</Link></p>
-    </div>
-);
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>プロジェクト名</th>
+                    <th>せつめい</th>
+                </tr>
+            </thead>
+            <tbody>
+            {projects.map(project => (
+                <tr key={project.id}>
+                    <td><p><Link to={"/projects/" + project.id}>{project.id}</Link></p></td>
+                    <td>{project.name}</td>
+                    <td>{project.description}</td>
+                </tr>              
+            ))}
+            </tbody>
+        </table>
+        <div>
+            <button onClick={add}>追加</button>
+        </div>
+        <Initializer />
+    </div>)
+};
