@@ -1,3 +1,5 @@
 export default {
-    ADD: Symbol()
+    ADD: Symbol(),
+    SET_PROJECTS: Symbol(),
+    SET_ITERATIONS: Symbol()
 };

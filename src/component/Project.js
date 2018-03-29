@@ -1,14 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { add } from '../actions'
+import { ProjectInitializer } from '../Initializer'
 
-export default ({ projectId }) => (
+
+export default ({ projectId, iterations }) => {    
+    
+    if (iterations === '') {
+        iterations = [];
+    }
+    return(
     <div>
         <h1>Project {projectId}</h1>
-        <ul>
-            <li>TODO イテレーションのデータを保持するStoreを作る</li>
-            <li>TODO イテレーションの一覧を表示する</li>
-            <li>TODO イテレーション詳細へリンクする</li>
-        </ul>
-        <p><Link to={'/projects/' + projectId + '/iterations/456'}>XXX iteration</Link></p>
-    </div>
-);
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>だいめい</th>
+                    <th>期間</th>
+                </tr>
+            </thead>
+            <tbody>
+            {iterations.map(iteration => (
+                <tr key={iteration.id}>
+                    <td>{iteration.id}</td>
+                    <td>{iteration.subject}</td>
+                    <td>{iteration.startOn} ～ {iteration.endOn}</td>
+                </tr>              
+            ))}
+            </tbody>
+        </table>
+        <div>
+            <button onClick={add}>追加</button>
+        </div>
+        <ProjectInitializer projectId={projectId} />
+    </div>)
+};

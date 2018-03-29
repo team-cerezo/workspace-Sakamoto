@@ -23,8 +23,8 @@ export default ({ projects }) => {
             <tbody>
             {projects.map(project => (
                 <tr key={project.id}>
-                    <td><p><Link to={"/projects/" + project.id}>{project.id}</Link></p></td>
-                    <td>{project.name}</td>
+                    <td><p><Link to={"/projects/" + project.id} >{project.id}</Link></p></td>
+                    <td><p><Link to={"/project/" + project.id}>{project.name}</Link></p></td>
                     <td>{project.description}</td>
                 </tr>              
             ))}

@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({ projectId, iterationId }) => (
-    <div>
+export default ({ projectId, iterationId }) => {
+    return (<div>
         <h1>Iteration {iterationId} (Project {projectId})</h1>
         <ul>
             <li>TODO ストーリーとタスクのデータを保持するStoreを作る</li>
@@ -9,5 +9,5 @@ export default ({ projectId, iterationId }) => (
             <li>TODO タスクの一覧をレーン別に表示する</li>
             <li>TODO タスクをレーン移動できるようにする（まだアサインはできなくて良い）</li>
         </ul>
-    </div>
-);
+    </div>);
+};

@@ -7,8 +7,11 @@ export class Project {
 }
 
 export class Iteration {
-    constructor(id, name) {
+    constructor(id, subject, description, startOn, endOn) {
         this.id = id;
-        this.name = name;
+        this.subject = subject;
+        this.description = description;
+        this.startOn = startOn;
+        this.endOn = endOn;
     }
 }
