@@ -4,7 +4,7 @@ import ProjectDispatcher from '../dispatcher';
 
 class ProjectStore extends ReduceStore {
     getInitialState() {
-        return '';
+        return [];
     }
     reduce(state, { type, payload }) {
         switch (type) {
