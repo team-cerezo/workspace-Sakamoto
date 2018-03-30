@@ -6,9 +6,6 @@ import { Initializer } from '../Initializer'
 
 export default ({ projects }) => {
 
-    if (projects === '') {
-        projects = [];
-    }
     return(
     <div>
         <h1>Home</h1>
